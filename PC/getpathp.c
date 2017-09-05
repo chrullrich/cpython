@@ -443,8 +443,7 @@ get_progpath(void)
 #else
     dllpath[0] = 0;
 #endif
-    if (GetModuleFileNameW(NULL, progpath, MAXPATHLEN))
-        return;
+    GetModuleFileNameW(NULL, progpath, MAXPATHLEN);
     if (prog == NULL || *prog == '\0')
         prog = L"python";
 
